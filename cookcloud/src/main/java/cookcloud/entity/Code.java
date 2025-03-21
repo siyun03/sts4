@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,6 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "CODE")
+@IdClass(CodeId.class)
 public class Code implements Serializable {
 
 	private static final long serialVersionUID = 332436933436524L;
@@ -29,7 +31,7 @@ public class Code implements Serializable {
 	@Column(name="CHILD_CODE")
 	private Long childCode;
 
-	@Column(name="CODE_NAME", columnDefinition = "NVARCHAR2(50)")
+	@Column(name="CODE_NAME", columnDefinition = "NVARCHAR2(50)", nullable = false)
 	private String codeName;
 
 	@Column(name="CODE_DESCRIPTION", columnDefinition = "NVARCHAR2(1000)")

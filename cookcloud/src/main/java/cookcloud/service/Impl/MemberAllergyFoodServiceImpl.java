@@ -1,4 +1,4 @@
-package cookcloud.serviceImpl;
+package cookcloud.service.Impl;
 
 import cookcloud.service.MemberAllergyFoodService;
 
